@@ -1,0 +1,58 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+
+
+
+</style>
+
+
+<div class="login-div" *ngIf="true">
+<form class="form-login">
+  <div class="sign-in-form">
+    <h4 class="text-center">Login</h4>
+    <label for="sign-in-form-username">Username</label>
+    <input type="text" class="sign-in-form-username" id="sign-in-form-username">
+    <label for="sign-in-form-password">Password</label>
+    <input type="text" class="sign-in-form-password" id="sign-in-form-password">
+    <button type="submit" class="sign-in-form-button">Sign In</button>
+  </div>
+  <head>
+    <link rel="stylesheet" type="text/css" href="app.component.css">
+    </head>
+</form>
+</div>
+
+
+<div class="sign-in-form">
+<form class='form-request'action="#" *ngIf="true">
+  <label for="lang">Urgencias</label>
+  <select name="lenguajes" id="lang">
+      <option value="seleccionar">Seleccione una de las opciones</option>
+      <option value="javascript">cardiologia</option>
+      <option value="php">neurologia</option>
+      <option value="java">cancerologia</option>
+      <option value="golang">cirugia ortopedia</option>
+      <option value="python">medicina general</option>
+      <option value="c#">pediatria</option>
+      <option value="C++">oculista</option>
+      <option value="erlang">psiquiatria</option>
+  </select>
+  
+  <textarea>agrege un comentario </textarea>
+  <input class= "sign-in-form-button" type="submit" value="Enviar" />
+</form>
+</div>
+
+
+
+
+
+<router-outlet />
