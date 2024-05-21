@@ -16,17 +16,10 @@
 
 <div class="sign-in-form" *ngIf="isRequestEnable">
 <form class='form-request'action="#" >
-  <label for="lang">Urgencias</label>
-  <select name="lenguajes" id="lang">
-      <option value="seleccionar">Seleccione una de las opciones</option>
-      <option value="javascript">cardiologia</option>
-      <option value="php">neurologia</option>
-      <option value="java">cancerologia</option>
-      <option value="golang">cirugia ortopedia</option>
-      <option value="python">medicina general</option>
-      <option value="c#">pediatria</option>
-      <option value="C++">oculista</option>
-      <option value="erlang">psiquiatria</option>
+  <label for="lang">Hola {{user.name}} , por favor ingresa tu solcitiud</label>
+  <select name="lenguajes" id="lang" >
+      <option *ngFor="let esp of this.Sigue.specialities" value="{{esp.id}}">{{esp.name}}</option>
+
   </select>
   
   <textarea>agrege un comentario </textarea>
