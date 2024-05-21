@@ -3,20 +3,21 @@ import { Speciality } from "./Speciality";
 import { User } from "./User";
 
 export class Eps {
-    id : number  = '';
+    id : number  = 0;
     name : string = '';
     users : User[] =[];
     specialities : Speciality[] =[];
     request : RequestUser [] =[];
 
 
-    valideRequestUsers(){
-
+    valideRequestUsers(_requestUser : RequestUser){
+        return false
     }
 
-    sendRequestToSigue(){
-
+    notifyUser(){
+        console.log('MENSAJE PA TU')
     }
+
 
 
 }
