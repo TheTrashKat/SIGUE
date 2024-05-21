@@ -13,9 +13,9 @@
 </div>
 
 <div class='form-add-info'>
-  <div class="w50" *ngIf="isRequestEnable">
-    Se encuentra contra la propuesta d euna flatafdorma de gestion de EPS, donde se prioriza el paciente y la demanda de las instalaciones de acuerdo a la necesidad que este posea
-  </div>
+  <div id="wrapper p50" *ngIf="isRequestEnable">
+		<p id="hi"></p>
+	</div>
   <div class="login-div">
     <div class="sign-in-form" *ngIf="isRequestEnable">
       <form class='form-request' [formGroup]="contactForm" (ngSubmit)="submit()">
@@ -34,25 +34,8 @@
 </div>
 
 
-<div class='form-add-info sign-in-form'>
-  <div class="w50" *ngIf="isRequestEnable">
-    Se encuentra contra la propuesta d euna flatafdorma de gestion de EPS, donde se prioriza el paciente y la demanda de las instalaciones de acuerdo a la necesidad que este posea
-  </div>
-  <div class="login-div">
-    <div class="sign-in-form" *ngIf="isRequestEnable">
-      <form class='form-request' [formGroup]="contactForm" (ngSubmit)="submit()">
-        <label *ngIf="isRequestEnable" for="lang">Hola {{user.name}} , por favor ingresa tu solcitiud</label>
-
-        <select formControlName="request">
-          <option>Seleccione una especilidad</option>
-          <option *ngFor="let esp of this.Sigue.specialities" [ngValue]="esp.id">{{esp.name}}</option>
-        </select>
-
-        <textarea>Agrege un comentario </textarea>
-        <input class="sign-in-form-button" type="submit" value="Enviar" />
-      </form>
-    </div>
-  </div>
+<div id="ppee" #target class='form-add-info sign-in-form' style="height: 100vh;">
+<h2>La dirrecion de tu envio es</h2>
 </div>
 
 

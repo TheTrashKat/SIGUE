@@ -28,7 +28,8 @@ export class Eps implements valideRequestUsers {
     }
 
     notifyUser() {
-        console.log('MENSAJE PA TU')
+        console.log(`${this.name} le informa que actualmente hay cupo disponible para la especilidad solciitada, la direccion de la entidad es :`)
+        return `${this.name} le informa que actualmente hay cupo disponible para la especilidad solciitada, la direccion de la entidad es :`
     }
 
 

@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
       request: [null]
     });
 
-    
+
   }
 
   submit() {
@@ -81,6 +81,7 @@ export class AppComponent implements OnInit {
     
     if(!this.EPS.valideRequestUsers(req)){
       this.EPS.notifyUser();
+      this.test()
     }else {
       this.sendToSigue(req)
     }
@@ -113,6 +114,11 @@ export class AppComponent implements OnInit {
 
   }
 
+
+  test(){
+   let a : any| undefined | null = document.getElementById('ppee')
+   a.scrollIntoView({behavior: 'smooth'});
+  }
 
 
 
