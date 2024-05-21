@@ -33,6 +33,11 @@ export class AppComponent implements OnInit {
   Sigue : Sigue = new Sigue();
   user : User = new User();
   EPS : Eps = new Eps();
+  menssage : any = '';
+
+  username ='';
+  password = '';
+  
 
 
   
@@ -56,10 +61,10 @@ export class AppComponent implements OnInit {
     this.generateRequest(this.contactForm.value)
   }
 
-   login(_user: string, _pass: number){
+   login(){
      this.Sigue.EPSs.forEach(eps => {
        let user = eps.users.filter((user) =>{
-          return user.name == _user &&  user.id == _pass
+          return user.name ==this.username &&  user.id ==  Number(this.password)
         });
         if (user.length >0){
           this.user = user[0];
@@ -79,8 +84,8 @@ export class AppComponent implements OnInit {
     this.EPS.valideRequestUsers = new Eps().valideRequestUsers;
     this.EPS.notifyUser = new Eps().notifyUser;
     
-    if(!this.EPS.valideRequestUsers(req)){
-      this.EPS.notifyUser();
+    if(this.EPS.valideRequestUsers(req)){
+      this.menssage= this.EPS.notifyUser();
       this.test()
     }else {
       this.sendToSigue(req)
@@ -97,13 +102,27 @@ export class AppComponent implements OnInit {
 
 
   sendToSigue(requestUser: RequestUser){
+    this.Sigue.notificationRequest = new Sigue().notificationRequest;
+    this.Sigue.haveSpeciliality = new Sigue().haveSpeciliality;
+    this.Sigue.asingRequest = new Sigue().asingRequest;
     this.Sigue.requests.push(requestUser);
-    console.log(this.Sigue)
+
+    if(this.Sigue.haveSpeciliality(requestUser.speciality)){
+      
+      let list : Eps[] = this.Sigue.asingRequest(requestUser);
+      let result =Math.random() * (list.length-1);
+      if(result <= 0)
+        result =0;
+      this.menssage= this.Sigue.notificationRequest(list[result].name);
+      this.test();
+    }
+
   }
 
   createListOfSpecialites(){
     this.Sigue.EPSs.forEach(eps => {
       eps.specialities.forEach(esp => {
+        esp.maxcapacity = 30;
       if(!this.Sigue.haveSpeciliality(esp.id))
         this.Sigue.specialities.push(esp);
       });

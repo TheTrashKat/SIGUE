@@ -13,18 +13,22 @@ export class Eps implements valideRequestUsers {
     users: User[] = [];
     specialities: Speciality[] = [];
     request: RequestUser[] = [];
-    maxCapacity = 10
+
 
 
     valideRequestUsers(_requestUser: RequestUser) {
         let flag = false;
         this.specialities.forEach(element => {
             if(element.id == _requestUser.speciality){
-                if(element.capacity + 1 < this.maxCapacity)
+                if(element.capacity + 1 < element.maxcapacity){
+                    element.capacity += element.capacity
                     flag = true;
+                    console.log(element.capacity)
+                }
             }
         });
         return flag;
+       
     }
 
     notifyUser() {

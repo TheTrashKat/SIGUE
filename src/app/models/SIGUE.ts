@@ -7,8 +7,22 @@ export class Sigue{
     requests : RequestUser[] =[];
     specialities : Speciality[]=[];
 
-    notificationRequest (){}
-    asingRequest(){}
+    notificationRequest (eps : string){
+        return `SIGUE le informa que actualmente hay cupo disponible para la especilidad solciitada, la direccion de la entidad es y la eps es ${eps}`
+    }
+    
+    asingRequest(requests : RequestUser){
+    let idEps: Eps [] = [];
+      this.EPSs.forEach(eps => {
+        let ep : any = eps.specialities.find((sp) =>{
+            return sp.id ==requests.speciality
+        });
+        if(ep)
+            idEps.push(eps)
+      });
+
+      return idEps;
+    }
 
 
     haveSpeciliality(_spc : number){
@@ -20,6 +34,7 @@ export class Sigue{
         return false
     }
 
+    
     
 
 
