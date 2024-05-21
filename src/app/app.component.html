@@ -1,32 +1,59 @@
-
 <div class="login-div" *ngIf="isLoginEnable">
-<div class="form-login">
-  <div class="sign-in-form">
-    <h4 class="text-center">Login</h4>
-    <label for="sign-in-form-username">Username</label>
-    <input type="text" class="sign-in-form-username" id="sign-in-form-username">
-    <label for="sign-in-form-password">Password</label>
-    <input type="text" class="sign-in-form-password" id="sign-in-form-password">
-    <button (click)='login("Miguel",1022402279)' type="" class="sign-in-form-button">Login</button>
+  <div class="form-login">
+    <div class="sign-in-form">
+      <h4 class="text-center">Login</h4>
+      <label for="sign-in-form-username">Username</label>
+      <input type="text" class="sign-in-form-username" id="sign-in-form-username">
+      <label for="sign-in-form-password">Password</label>
+      <input type="text" class="sign-in-form-password" id="sign-in-form-password">
+      <button (click)='login("Miguel",1022402279)' type="" class="sign-in-form-button">Login</button>
+    </div>
+
   </div>
-
-</div>
 </div>
 
+<div class='form-add-info'>
+  <div class="w50" *ngIf="isRequestEnable">
+    Se encuentra contra la propuesta d euna flatafdorma de gestion de EPS, donde se prioriza el paciente y la demanda de las instalaciones de acuerdo a la necesidad que este posea
+  </div>
+  <div class="login-div">
+    <div class="sign-in-form" *ngIf="isRequestEnable">
+      <form class='form-request' [formGroup]="contactForm" (ngSubmit)="submit()">
+        <label *ngIf="isRequestEnable" for="lang">Hola {{user.name}} , por favor ingresa tu solcitiud</label>
 
-<div class="sign-in-form" *ngIf="isRequestEnable">
-<form class='form-request'action="#" >
-  <label for="lang">Hola {{user.name}} , por favor ingresa tu solcitiud</label>
-  <select name="lenguajes" id="lang" >
-      <option *ngFor="let esp of this.Sigue.specialities" value="{{esp.id}}">{{esp.name}}</option>
+        <select formControlName="request">
+          <option>Seleccione una especilidad</option>
+          <option *ngFor="let esp of this.Sigue.specialities" [ngValue]="esp.id">{{esp.name}}</option>
+        </select>
 
-  </select>
-  
-  <textarea>agrege un comentario </textarea>
-  <input class= "sign-in-form-button" type="submit" value="Enviar" />
-</form>
+        <textarea>Agrege un comentario </textarea>
+        <input class="sign-in-form-button" type="submit" value="Enviar" />
+      </form>
+    </div>
+  </div>
 </div>
 
+
+<div class='form-add-info sign-in-form'>
+  <div class="w50" *ngIf="isRequestEnable">
+    Se encuentra contra la propuesta d euna flatafdorma de gestion de EPS, donde se prioriza el paciente y la demanda de las instalaciones de acuerdo a la necesidad que este posea
+  </div>
+  <div class="login-div">
+    <div class="sign-in-form" *ngIf="isRequestEnable">
+      <form class='form-request' [formGroup]="contactForm" (ngSubmit)="submit()">
+        <label *ngIf="isRequestEnable" for="lang">Hola {{user.name}} , por favor ingresa tu solcitiud</label>
+
+        <select formControlName="request">
+          <option>Seleccione una especilidad</option>
+          <option *ngFor="let esp of this.Sigue.specialities" [ngValue]="esp.id">{{esp.name}}</option>
+        </select>
+
+        <textarea>Agrege un comentario </textarea>
+        <input class="sign-in-form-button" type="submit" value="Enviar" />
+      </form>
+    </div>
+  </div>
+</div>
 
 
 

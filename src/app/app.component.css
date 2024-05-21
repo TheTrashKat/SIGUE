@@ -3,25 +3,27 @@
   padding: 1rem 1.5em;
   border-radius: .5rem;
   background-color: #3d454f;
+  font-family: monospace;
 }
 
 .sign-in-form h4 {
   color: white;
   margin-bottom: 1rem;
   font-weight: 600;
-  text-transform: uppercase;
+
 }
 
 .sign-in-form label {
-  text-transform: uppercase;
-  color: #adadad;
+  color: white;
   letter-spacing: 1px;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-.sign-in-form input {
-  color: white;
+
+.sign-in-form input:focus {
+  
+  color: black;
 }
 
 .sign-in-form input:focus {
@@ -32,7 +34,7 @@
 .sign-in-form-password {
   border-radius: 30px;
   border: none;
-  opacity: .1;
+  text-align: -webkit-center;
   transition: all ease .4s;
 }
 
@@ -44,13 +46,28 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   width: 100%;
-  padding: 1rem;
   transition: all ease .4s;
+  margin: 10px 0px;
+}
+
+
+.form-add-info{
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  color: #fff;
+  font-family: monospace;
+}
+
+.w50{
+  width: 50%;
 }
 
 .sign-in-form-button:hover {
   background-color: #44c8ed;
   border-color: #44c8ed;
+  padding: 1rem;
 }
 
 .topbar-responsive {

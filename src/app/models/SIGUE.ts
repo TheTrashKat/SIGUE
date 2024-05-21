@@ -20,5 +20,7 @@ export class Sigue{
         return false
     }
 
+    
+
 
 }
